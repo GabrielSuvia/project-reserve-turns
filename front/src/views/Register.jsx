@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import Validate from "../helpers/validate";
+import Validate from "../helpers/validate.js";
 import { Navigate } from "react-router-dom";
 import styles from "./Register.module.css";
 
@@ -34,14 +34,21 @@ const [errors, setErrors] = useState({
          };
 
 
+
   const handleSubmit = async(e)=>{
+
     e.preventDefault();
 try {
-   const response =  await axios.post("http://localhost:3004/user/register", userForm, {
+  
+    if(Object.keys(errors).length === 0){
+      const response =  await axios.post("http://localhost:3004/user/register", userForm, {
         headers: {
           'Content-Type': 'application/json'
-        }})
+        }});
+
     console.log(response.data)
+    }
+
     Navigate("/")
     alert("Resgistro exitoso...");
 
