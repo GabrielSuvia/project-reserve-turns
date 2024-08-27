@@ -7,10 +7,10 @@ export class Credential  {
 @PrimaryGeneratedColumn()
 id:number
 
-@Column()
+@Column({unique:true})
 userName:string
 
-@Column()
+@Column({unique:true})
 password:string
 
 }

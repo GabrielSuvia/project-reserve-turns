@@ -2,6 +2,7 @@ import {Iturn} from "../interfaces/turn";
 import {Turn} from "../entity/turnEntity";
 import {dataBaseTurn} from "../config/data-source";
 import {dataBaseUser} from "../config/data-source";
+import { Usser } from "../entity/userEntity";
 //import {Usser} from "../entity/userEntity";
 //import {IturnDtb} from "../dtb/turnDtb";
 
@@ -17,28 +18,34 @@ export const turnGetService = async (id:number) :Promise<Turn | null> =>{
     return turns;
 };
 
- export const turnCreateService = async (date:string, time:number, userId:number, status:string): Promise<void>=>{
+ export const turnCreateService = async (date:string, time:string, userId:number, status:string): Promise<Turn>=>{
   
     const findUser = await dataBaseUser.findOneBy({id: userId});
-    console.log(findUser)
+    console.log("findUser de la db en turnCreateService",findUser)
     if(findUser){
      const turnRegister: Iturn= {date:date, time:time, userId:findUser, status:status};
-     console.log(turnRegister)
+     console.log("turnregister de turnCreateService", turnRegister)
     const newTurn = await dataBaseTurn.create(turnRegister);
-     await dataBaseTurn.save(newTurn);
+   
+    const turnId = await dataBaseTurn.save(newTurn);
+    console.log("newTurn de turnCreateService", turnId)//
+    return newTurn;
+  } else {
+    throw new Error("User not found");
+  }
+};
+//-------error
 
-     if (!findUser.turnId) {
-      findUser.turnId = [];
-    }
+/*
+  Object.assign(findUser, turnId:turnId.push(newTurn))
+  if(Array.isArray(findUser.turnId)){
     findUser.turnId.push(newTurn);
 
-     await dataBaseUser.save(findUser);
-   
-    };
-  
+    await dataBaseUser.save(findUser);
+  };
+  */
 
-  
-};
+ 
 
 export const turnCancelledService = async (id:number): Promise<void>=>{
  

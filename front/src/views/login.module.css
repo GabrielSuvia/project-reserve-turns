@@ -18,3 +18,7 @@ input[type="password"] {
     border-radius: 5px;
     box-sizing: border-box;
 }
+.boton{
+    display: flex;
+    justify-content: center;
+}

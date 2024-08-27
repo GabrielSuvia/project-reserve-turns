@@ -1,11 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
 import Validate from "../helpers/validate.js";
-import { Navigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import styles from "./Register.module.css";
 
 const Register = ()=>{
-
+const navigate = useNavigate();
 
 const [userForm, setUserForm] = useState({
     userName:"",
@@ -24,6 +24,7 @@ const [errors, setErrors] = useState({
     nDni:"nDni is required",
 });
 
+
     const handleOnchange = (event)=>{
 
         const {name,value} = event.target;
@@ -35,31 +36,21 @@ const [errors, setErrors] = useState({
 
 
 
-  const handleSubmit = async(e)=>{
+  const handleSubmit = (e)=>{
 
     e.preventDefault();
-try {
-  
-    if(Object.keys(errors).length === 0){
-      const response =  await axios.post("http://localhost:3004/user/register", userForm, {
-        headers: {
-          'Content-Type': 'application/json'
-        }});
 
-    console.log(response.data)
-    }
+       axios.post("http://localhost:3004/user/register", userForm)
+       .then((response)=>console.log(response.data))
+       .catch((error)=> {
+        console.error('errors to send the data', error);
+        alert("faill data...");
+       
+       })
 
-    Navigate("/")
-    alert("Resgistro exitoso...");
-
-
-} catch (error) {
-    console.error('Error al enviar los datos:', error);
-    alert("Su cuenta no ha sido registrado...");
-
-}
-    
-  };
+    alert("succesfully registered...");
+   navigate("/login")
+  };//onchange corre en tiempo de ejecucion
 
     return (<div>
    <div className={styles.formContainer}>

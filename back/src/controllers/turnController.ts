@@ -1,5 +1,6 @@
 import { Request,Response } from "express";
 import { turnsGetService, turnGetService, turnCreateService,turnCancelledService } from "../services/turnService";
+import { Turn } from "../entity/turnEntity";
 
 
 export const turnsGetController = async (req:Request,res:Response)=>{
@@ -26,9 +27,9 @@ export const turnGetController = async (req:Request,res:Response)=>{
 export const turnCreateController = async (req:Request,res:Response)=>{
     try {
         const {date, time, userId, status} =req.body;
-    
-        await turnCreateService(date, time, userId, status)
-        res.status(200).json("turno reservado");
+      console.log(userId, "turnController")
+      const turn: Turn = await turnCreateService(date, time, userId, status)
+        res.status(200).json(turn);
 
        } catch (error) {
         console.log("hay un error")

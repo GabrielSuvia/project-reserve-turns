@@ -13,8 +13,8 @@ export class Turn{
     @Column()
     date:string
 
-    @Column("integer")
-    time:number
+    @Column()
+    time:string
 
     @ManyToOne(()=>Usser,(user)=>user.turnId)
     userId:Usser

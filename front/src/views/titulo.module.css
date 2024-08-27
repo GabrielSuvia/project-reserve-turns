@@ -4,3 +4,9 @@
     left:350px;
     
 }
+.boton{
+  position: relative;
+  left: 350px;
+  top:-100px;
+ background-color: rgb(42, 53, 207);
+}

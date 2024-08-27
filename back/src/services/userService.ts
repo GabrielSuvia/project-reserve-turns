@@ -4,6 +4,7 @@ import {Ilogin} from "../interfaces/login";
 import {dataBaseCredential, dataBaseUser}  from "../config/data-source";
 import {Usser} from "../entity/userEntity";
 import { credentialCreateService,validateCredentialService } from "./credentialService";
+import { IcredentialDtb } from "../dtb/credentialDtb";
 
 
 export const usersGetService = async (): Promise<Usser[]>=>{
@@ -44,7 +45,7 @@ export const userCreateService = async (password:string, userName:string, name:s
     
 };
 
-export const userLoginService = async (userName:string, password:string):Promise<Ilogin | void>=>{
+export const userLoginService = async (userName:string, password:string):Promise<IcredentialDtb | void>=>{
     const userCredential = await validateCredentialService(userName,password);
     const crede = await dataBaseCredential.findOneBy({userName});
     console.log(userCredential,"es userlognservice")
@@ -52,9 +53,10 @@ export const userLoginService = async (userName:string, password:string):Promise
       const users = await dataBaseUser.find();
       const user = users.find((user)=> user.id === crede.id)
 
-     const userLogin:Ilogin = {
-      login:userCredential,
-      user:user };
+     const userLogin:IcredentialDtb = {
+      id: crede.id,
+      userName:crede.userName,
+      password:crede.password };
 
      console.log(userCredential)
     if(userCredential){
