@@ -16,13 +16,6 @@
    line-height: 4;
 }
 
-.iput{
-width: 40px;
-    
-    position: absolute;
-
-
-}
 
 .formGroup{
     /* Hace que los elementos crezcan y se encojan según el espacio disponible, con un ancho base de 200px */

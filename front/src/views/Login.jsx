@@ -53,19 +53,20 @@ const handleSubmitForm = (e)=>{
 };
 
 
-    return (<div className={styles.loginContainer}>
+    return (<div>
    
-    <form onSubmit={handleSubmitForm}>
-         <h1>Login</h1>
-
+    <form onSubmit={handleSubmitForm} className={styles.formContein}>
+         <h1 style={{margin:"10px"}}>Login</h1>
+         <div>
             <label>user</label>
             <input type="text" name="userName" value={login.userName} onChange={handleOnchange} />
-            {errors.userName && <p style={{color:'red'}}>{errors.userName}</p>}
-        
+            {errors.userName && <p style={{color:'red',position:'relative',right:'-100px'}}>{errors.userName}</p>}
+        </div>
+        <div>
             <label>password</label>
             <input type="password" name="password" value={login.password} onChange={handleOnchange} />
-            {errors.password &&<p style={{color:'red'}}>{errors.password}</p>}
-
+            {errors.password &&<p style={{color:'red',position:'relative',right:'-120px'}}>{errors.password}</p>}
+      </div>
           <button type="submit" className={styles.boton}>Enter</button>
     </form>
     </div>

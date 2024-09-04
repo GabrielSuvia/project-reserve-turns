@@ -15,12 +15,14 @@
 
 input[type="text"],
 input[type="password"] {
-    width: 100%;
+    width: 300px;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
+  
+    
 }
 .boton{
     padding: 12px 24px;
@@ -31,4 +33,16 @@ input[type="password"] {
     border: 2px solid transparent; 
     border-radius: 8px;
     cursor: pointer; 
+}
+.formContein{
+background-color: white;
+border-radius: 3%;
+position: relative;
+left: 400px;
+width: 400px;
+height: 300px;
+display: flex;
+align-items: center;
+flex-direction: column;
+
 }
