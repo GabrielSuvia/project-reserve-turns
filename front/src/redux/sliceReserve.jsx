@@ -9,31 +9,29 @@ const reservationSlide = createSlice({
     reducers:{
         reservationAdd: (state, action)=>{//actions
             const existingTurnIndex = state.reservation.findIndex(item => item.id === action.payload.id);
-    
     if (existingTurnIndex !== -1) {
   
         state.reservation[existingTurnIndex] = action.payload;
     } else {
- 
         state.reservation.push(action.payload);
     }
     console.log(state.reservation);
 
-             // localStorage.setItem('reservation',JSON.stringify(state.reservation))
         },
         removeReserve:(state,action)=>{//action.payload = objeto recibido
-          const turn = state.reservation.find((index)=> index.id === action.payload.id)
-          if(turn){
-            state.reservation[action.payload.id].status="false"
+            console.log("redux1",action.payload)
+          const turnIndex = state.reservation.findIndex((ele)=> ele.id === action.payload )
+          const turnChanged = state.reservation.find((tur)=> tur.id ===action.payload )
+          if(turnIndex !== -1){
+             turnChanged.status="false"
+            state.reservation[turnIndex]={...state.reservation[turnIndex], ...turnChanged}
+            console.log("redux3",state.reservation[turnIndex])
           }
            
-            //localStorage.setItem('reservation',JSON.stringify(turn))
         },
         resetReserve:(state)=>{
             state.reservation=[];
             
-           
-            //localStorage.removeItem('reservation')
         }
     }
 });

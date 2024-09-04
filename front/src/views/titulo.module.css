@@ -41,11 +41,11 @@ margin: 10px;
 display: flex;
 flex-direction: column;
 align-items: center;
-position: relative;
-top: 10px;
+position: absolute;
+top: 100px;
 width: 1200px;
 height: 100%;
-right: 250px;
+right: 380px;
 }
 
 .turn{

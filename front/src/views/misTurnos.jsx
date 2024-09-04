@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import Turns from '../components/turn.jsx'
 import axios from 'axios'
 import {useSelector, useDispatch} from 'react-redux'
-import { resetReserve, reservationAdd} from '../redux/sliceReserve.jsx'
+import {  reservationAdd} from '../redux/sliceReserve.jsx'
 import { useNavigate } from 'react-router-dom'
 import style from './titulo.module.css'
 
@@ -53,14 +53,12 @@ if(!userSelect){
     <div>
     <h1 className={style.titulo}>Mis Turnos</h1>
     </div>
-
     <div >
     <button onClick={handleAddTurn} className={style.boton}>Crear Nuevo turno</button>
         {turnSelect?.map((item,index)=>{
            return< Turns key={index} turn={item}/>
         })}
     </div>
-
     </div>
 
  

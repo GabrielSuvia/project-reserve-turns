@@ -1,7 +1,10 @@
 .homeContainer {
     text-align: center;
     padding: 20px;
-    background-color: #3b529c;
+    background-color: #1a4bec;
+    position: relative;
+    top: 350px;
+   
 }
 
 .imageContainer {

@@ -9,7 +9,7 @@
   border-radius: 8px; 
   box-sizing: border-box; 
   background-color: #f9f9f9;
-  position: relative;
+  
   left: 400px;
 }
 
@@ -34,13 +34,18 @@ input[type="password"] {
     border-radius: 8px;
     cursor: pointer; 
 }
+body{
+    background-color: #007bff;
+    height: 100%;
+}
 .formContein{
 background-color: white;
 border-radius: 3%;
-position: relative;
+position: absolute;
 left: 400px;
 width: 400px;
 height: 300px;
+bottom: 100px;
 display: flex;
 align-items: center;
 flex-direction: column;
