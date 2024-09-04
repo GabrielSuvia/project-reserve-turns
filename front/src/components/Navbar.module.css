@@ -1,3 +1,10 @@
+* {
+   margin: 0; /* Elimina todos los márgenes por defecto */
+   padding: 0; /* Elimina todos los paddings por defecto */
+   box-sizing: border-box; /* Incluye padding y border en el cálculo del ancho y alto */
+ }
+
+
 .navbar {
    background-color: #333;
    margin: 0;
@@ -9,6 +16,7 @@
    position: fixed;
    top: 0;
    width: 100%;
+   right: 0;
    z-index: 1000;
 }
 
@@ -19,9 +27,16 @@
 
 
 body{
-   background-color: #3b529c;
+   background-color: #5260db;
+   /* Añade un poco de espacio interior para el contenido */
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+  /* Hace que el contenedor cubra al menos la altura de la ventana */
+  /* Incluye padding y border en el cálculo del ancho y alto */
+  margin: 0;
+  padding: 0;
+  height: 900px;
 }
 .btn{
-  background-color: orange;
+  background-color: rgba(240, 237, 231, 0.863);
   
 }

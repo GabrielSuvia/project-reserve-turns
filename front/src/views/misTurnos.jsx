@@ -1,11 +1,12 @@
 import { useEffect } from 'react'
 //import turns from '../helpers/turn.js'
 import Turns from '../components/turn.jsx'
-import style from './titulo.module.css'
 import axios from 'axios'
 import {useSelector, useDispatch} from 'react-redux'
 import { resetReserve, reservationAdd} from '../redux/sliceReserve.jsx'
 import { useNavigate } from 'react-router-dom'
+import style from './titulo.module.css'
+
 //import Turn from '../components/turn.jsx'
 
 const MisTurno = ()=>{
@@ -43,21 +44,27 @@ if(!userSelect){
    },userSelect?[userSelect.id] : [])
    
     console.log("renderizando",turnSelect)
-    return(<>
 
-    <div>
-    <h3>Usuario: {userSelect.userName}</h3>
-    <p>photo</p>
+
+    return(<div >
+
+     <div className={style.turnes}>
+    
+    <div className={style.titulo}>
+    <h1>Mis Turnos</h1>
     </div>
-    
+
+    <div className={style.turn}>
     <button onClick={handleAddTurn} className={style.boton}>Crear Nuevo turno</button>
-    <h1 className={style.titulo}>Mis Turnos</h1>
-    
         {turnSelect?.map((item,index)=>{
-            return <Turns key={index} turn={item}/>
+           return< Turns key={index} turn={item}/>
         })}
-  
-    </>)
+    </div>
+
+    </div>
+
+ 
+    </div>)
 }
 
 export default MisTurno

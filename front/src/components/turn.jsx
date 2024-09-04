@@ -30,7 +30,7 @@ console.log(turnSelector,"turnSelector")
 }
 
 return(<div className={styles.container}>
-          
+     
         <p className={styles.record}>date: {turn.date}</p>
         <p className={styles.record}>time: {turn.time}</p>
         <p className={styles.record}>status: {turn.status}</p>

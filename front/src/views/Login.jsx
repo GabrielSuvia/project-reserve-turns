@@ -66,7 +66,7 @@ const handleSubmitForm = (e)=>{
             <input type="password" name="password" value={login.password} onChange={handleOnchange} />
             {errors.password &&<p style={{color:'red'}}>{errors.password}</p>}
 
-          <button type="submit">Enter</button>
+          <button type="submit" className={styles.boton}>Enter</button>
     </form>
     </div>
     )

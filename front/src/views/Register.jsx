@@ -35,7 +35,6 @@ const [errors, setErrors] = useState({
          };
 
 
-
   const handleSubmit = (e)=>{
 
     e.preventDefault();
@@ -56,33 +55,47 @@ const [errors, setErrors] = useState({
    <div className={styles.formContainer}>
 
        <form onSubmit={handleSubmit}>
-       <h1>Register</h1>
+       <h1 style={{margin:'20px',position:'relative',left:'30%'}}>Register</h1>
        
-        <label>user</label>
-        <input type="text" name="userName" value={userForm.userName} onChange={handleOnchange} />
-      {errors.userName && <p style={{color:'red'}}>{errors.userName}</p>}
+       <div className={styles.formGroup}>
+        <label style={{position:'relative', left:'-350px'}}>user</label>
+        <input type="text" name="userName" value={userForm.userName} onChange={handleOnchange} style={{width:'400px',height:'30px',position:'absolute',left:'150px'}} />
+      {errors.userName && <p style={{color:'red',position: 'absolute', right:'0px'}}>{errors.userName}</p>}
+      </div>
 
-        <label>password</label>
-        <input type="password" name="password" value={userForm.password} onChange={handleOnchange} />
-        {errors.password && <p style={{color:'red'}}>{errors.password}</p>}
-        
-        <label>name</label>
-        <input type="text" name="name" value={userForm.name} onChange={handleOnchange} />
-        {errors.name && <p style={{color:'red'}}>{errors.name}</p>}
+      <div className={styles.formGroup}>
+        <label style={{position:'relative', left:'-350px'}}>password</label>
+        <input type="password" name="password" value={userForm.password} onChange={handleOnchange} style={{width:'400px',height:'30px',position:'absolute',left:'150px'}}/>
+        {errors.password && <p style={{color:'red',position: 'absolute', right:'0px'}}>{errors.password}</p>}
+     </div>
 
-        <label>email</label>
-        <input type="email" name="email" value={userForm.email} onChange={handleOnchange}/>
-        {errors.email && <p style={{color:'red'}}>{errors.email}</p>}
+     <div className={styles.formGroup}>
+        <label style={{position:'relative', left:'-350px'}}>name</label>
+        <input type="text" name="name" value={userForm.name} onChange={handleOnchange} style={{width:'400px',height:'30px',position:'absolute',left:'150px'}}/>
+        {errors.name && <p style={{color:'red', position: 'absolute', right:'0px'}}>{errors.name}</p>}
+      </div>
 
-        <label>birthdate</label>
-        <input type="text" name="birthdate" value={userForm.birthdate} onChange={handleOnchange} />
-        {errors.birthdate && <p style={{color:'red'}}>{errors.birthdate}</p>}
-        
-        <label>nDni</label>
-        <input type="number" name="nDni" value={userForm.nDni} onChange={handleOnchange} />
-        {errors.nDni && <p style={{color:'red'}}>{errors.nDni}</p>}
+      <div className={styles.formGroup}>
+        <label style={{position:'relative', left:'-350px'}} >email</label>
+        <input type="email" name="email" value={userForm.email} onChange={handleOnchange} style={{width:'400px',height:'30px',position:'absolute',left:'150px'}}/>
+        {errors.email && <p style={{color:'red', position: 'absolute', right:'0px'}}>{errors.email}</p>}
+      </div> 
+      
+      <div className={styles.formGroup}>
+        <label style={{position:'relative', left:'-350px'}}>birthdate</label>
+        <input type="text" name="birthdate" value={userForm.birthdate} onChange={handleOnchange} style={{width:'400px',height:'30px',position:'absolute',left:'150px'}}/>
+        {errors.birthdate && <p style={{color:'red', position: 'absolute', right:'0px'}}>{errors.birthdate}</p>}
+      </div>
+      
+      
+      <div className={styles.formGroup}>
+        <label style={{position:'relative', left:'-350px'}}>nDni</label>
+        <input type="number" name="nDni" value={userForm.nDni} onChange={handleOnchange} style={{width:'400px',height:'30px',position:'absolute',left:'150px'}}/>
+        {errors.nDni && <p style={{color:'red', position: 'absolute', right:'0px'}}>{errors.nDni}</p>}
+     </div>
+   
 
-        <button type="submit">Registrar</button>
+        <button type="submit" className={styles.btn}>Register</button>
     </form>
     </div>
 

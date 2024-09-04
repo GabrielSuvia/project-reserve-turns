@@ -1,12 +1,16 @@
 .loginContainer {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    position: relative;
-    left: 500px;
-    color: rgb(34, 21, 21);
+    display: flex; 
+  justify-content: center; 
+  gap: 16px;
+  max-width: 800px; 
+  margin: 90px; 
+  padding: 20px;
+  border: 1px solid #ddd; 
+  border-radius: 8px; 
+  box-sizing: border-box; 
+  background-color: #f9f9f9;
+  position: relative;
+  left: 400px;
 }
 
 input[type="text"],
@@ -19,6 +23,12 @@ input[type="password"] {
     box-sizing: border-box;
 }
 .boton{
-    display: flex;
-    justify-content: center;
+    padding: 12px 24px;
+    font-size: 16px; 
+    font-family: Arial, sans-serif; 
+    color: #fff; 
+    background-color: #007bff; 
+    border: 2px solid transparent; 
+    border-radius: 8px;
+    cursor: pointer; 
 }

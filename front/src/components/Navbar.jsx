@@ -7,6 +7,9 @@ import images from '../assets/images.png';
 import { useDispatch, useSelector } from 'react-redux';
 import {logOut} from '../redux/sliceUser'
 import { resetReserve } from '../redux/sliceReserve';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faUser} from '@fortawesome/free-solid-svg-icons'
+import style from '../views/titulo.module.css'
 
 const Navbar = ()=>{
 
@@ -21,6 +24,7 @@ const Navbar = ()=>{
      navigate('/')
      return;
     }
+
     return (
    
     <div className={styles.navbar} >
@@ -28,8 +32,15 @@ const Navbar = ()=>{
     <Link to="/">HOME</Link>
    
    {user?(<>
+   
     <Link to="/Misturnos">My turns</Link>
     <button className={styles.btn} onClick={handleState}>Logout</button>
+
+    <div>
+    <h3 className={style.userName}>Usuario: {user.userName}</h3>
+    <p className={style.userPhoto}><FontAwesomeIcon icon={faUser} size='2x' /></p>
+    </div>
+
     </>
    ):(<>
       <Link to="/Login">LOGIN</Link>
