@@ -17,7 +17,6 @@ const Navbar = ()=>{
     const dispatch = useDispatch();
    const navigate = useNavigate();
 
-
     const handleState = ()=>{
         dispatch(resetReserve())
      dispatch(logOut())

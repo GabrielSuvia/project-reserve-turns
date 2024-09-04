@@ -50,11 +50,11 @@ if(!userSelect){
 
      <div className={style.turnes}>
     
-    <div className={style.titulo}>
-    <h1>Mis Turnos</h1>
+    <div>
+    <h1 className={style.titulo}>Mis Turnos</h1>
     </div>
 
-    <div className={style.turn}>
+    <div >
     <button onClick={handleAddTurn} className={style.boton}>Crear Nuevo turno</button>
         {turnSelect?.map((item,index)=>{
            return< Turns key={index} turn={item}/>
