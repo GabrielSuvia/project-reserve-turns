@@ -11,9 +11,11 @@
   border-radius: 8px; 
   box-sizing: border-box; 
   background-color: #f9f9f9;
-  position: relative;
+  position: absolute;
+  top: 130px;
   left: 200px;
    line-height: 4;
+
 }
 
 

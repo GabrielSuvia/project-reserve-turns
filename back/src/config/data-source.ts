@@ -23,4 +23,3 @@ export const AppDataSource = new DataSource({
 export const dataBaseUser = AppDataSource.getRepository(Usser);
 export const dataBaseCredential = AppDataSource.getRepository(Credential);
 export const dataBaseTurn = AppDataSource.getRepository(Turn);
-console.log(AppDataSource)

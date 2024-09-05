@@ -5,7 +5,6 @@ import styles from "./login.module.css"
 import ValidateLogin from "../helpers/validateLogin.js";
 import {useDispatch} from "react-redux";
 import {logIn} from "../redux/sliceUser.jsx"
-import { resetReserve } from "../redux/sliceReserve.jsx";
 
 
 const Login = ()=>{
@@ -56,17 +55,20 @@ const handleSubmitForm = (e)=>{
     return (<div>
    
     <form onSubmit={handleSubmitForm} className={styles.formContein}>
-         <h1 style={{margin:"10px"}}>Login</h1>
-         <div>
-            <label>user</label>
-            <input type="text" name="userName" value={login.userName} onChange={handleOnchange} />
-            {errors.userName && <p style={{color:'red',position:'relative',right:'-100px'}}>{errors.userName}</p>}
+         <h1 >Login</h1>
+
+         <div className={styles.entrada1} >
+            <label style={{position:'absolute', left:'30px',top:'68px'}}>user</label>
+            <input type="text" name="userName" value={login.userName} onChange={handleOnchange} className={styles.input1}/>
+            {errors.userName && <p style={{position:'absolute', left:'380px', top:'75px'}}>{errors.userName}</p>}
         </div>
-        <div>
-            <label>password</label>
-            <input type="password" name="password" value={login.password} onChange={handleOnchange} />
-            {errors.password &&<p style={{color:'red',position:'relative',right:'-120px'}}>{errors.password}</p>}
+
+        <div className={styles.entrada2}>
+            <label style={{position:'absolute', left:'30px',top:'140px'}}>password</label>
+            <input type="password" name="password" value={login.password} onChange={handleOnchange} className={styles.input2} />
+            {errors.password &&<p style={{position:'absolute', left:'380px',top:'140px'}}>{errors.password}</p>}
       </div>
+
           <button type="submit" className={styles.boton}>Enter</button>
     </form>
     </div>

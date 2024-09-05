@@ -58,7 +58,7 @@ const [errors, setErrors] = useState({
        <h1 style={{margin:'20px',position:'relative',left:'30%'}}>Register</h1>
        
        <div className={styles.formGroup}>
-        <label style={{position:'relative', left:'-350px'}}>user</label>
+        <label style={{position:'relative', left:'-350px'}}>username</label>
         <input type="text" name="userName" value={userForm.userName} onChange={handleOnchange} style={{width:'400px',height:'30px',position:'absolute',left:'150px'}} />
       {errors.userName && <p style={{color:'red',position: 'absolute', right:'0px'}}>{errors.userName}</p>}
       </div>
