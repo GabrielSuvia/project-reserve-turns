@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-//import turns from '../helpers/turn.js'
 import Turns from '../components/turn.jsx'
 import axios from 'axios'
 import {useSelector, useDispatch} from 'react-redux'
@@ -7,7 +6,6 @@ import {  reservationAdd} from '../redux/sliceReserve.jsx'
 import { useNavigate } from 'react-router-dom'
 import style from './titulo.module.css'
 
-//import Turn from '../components/turn.jsx'
 
 const MisTurno = ()=>{
     const dispatch = useDispatch();
@@ -29,7 +27,7 @@ if(!userSelect){
 
    useEffect(()=>{
     
-        axios.get(`http://localhost:3004/user/${userSelect.id}`)
+        axios.get(`http://localhost:3002/user/${userSelect.id}`)
         .then((response) => {  response.data.turnId?.forEach((item)=>dispatch(reservationAdd(item)) )
             console.log("userId, turnId",response.data.turnId)
         })//un arreglo

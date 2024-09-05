@@ -1,6 +1,3 @@
-//import About from './About'
-//import Register from './Register'
-//import Login from './Login'
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './Navbar.module.css';
 import images from '../assets/images.png';

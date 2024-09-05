@@ -35,7 +35,7 @@ const handleFormTurn = (e)=>{
 
 console.log(turn,"turn")
 
-    axios.post("http://localhost:3004/turn/schedule", turn)
+    axios.post("http://localhost:3002/turn/schedule", turn)
     .then((response)=>{console.log(response.data)
         dispatch(reservationAdd(response.data))
         navigate('/MisTurnos')
