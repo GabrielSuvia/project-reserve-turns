@@ -21,7 +21,7 @@ console.log(turnSelector,"turnSelector")
 
    console.log(turnFind.id, "eliminando en component Turn",turnFind)
 
-    axios.put(`http://localhost:3002/turn/cancel/${turnFind.id}`, turnFind)
+    axios.put(`http://localhost:3004/turn/cancel/${turnFind.id}`, turnFind)
     .then((response)=>{ console.log("turno cancelado", response.data)
         setBtn("Cancelled")
         dispatch(removeReserve(turnFind.id))

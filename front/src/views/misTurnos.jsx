@@ -27,7 +27,7 @@ if(!userSelect){
 
    useEffect(()=>{
     
-        axios.get(`http://localhost:3002/user/${userSelect.id}`)
+        axios.get(`http://localhost:3004/user/${userSelect.id}`)
         .then((response) => {  response.data.turnId?.forEach((item)=>dispatch(reservationAdd(item)) )
             console.log("userId, turnId",response.data.turnId)
         })//un arreglo

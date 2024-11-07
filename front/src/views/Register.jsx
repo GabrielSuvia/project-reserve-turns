@@ -39,7 +39,7 @@ const [errors, setErrors] = useState({
 
     e.preventDefault();
 
-       axios.post("http://localhost:3002/user/register", userForm)
+       axios.post("http://localhost:3004/user/register", userForm)
        .then((response)=>console.log(response.data))
        .catch((error)=> {
         console.error('errors to send the data', error);
