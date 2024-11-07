@@ -16,10 +16,10 @@ export class Usser {
     @Column({length:255, unique:true})
     email:string
 
-    @Column()
+    @Column({nullable:true})
     birthdate:string
     
-    @Column("integer")
+    @Column("integer",{nullable:true})
     nDni: number
 
     @OneToOne(()=>Credential)
