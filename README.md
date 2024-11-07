@@ -16,7 +16,7 @@ frontend: react, css module,redux.
 ## Instalación
 
 ```bash
-git clone https://github.com/mi-usuario/mi-proyecto.git
+git clone https://github.com/GabrielSuvia/project-reserve-turns.git
 cd mi-proyecto
 npm install
 npm run dev
