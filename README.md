@@ -1,4 +1,4 @@
- Mi Proyecto
+## Mi Proyecto
 
 Este es un proyecto para gestionar reservas de tickets en línea.
 
