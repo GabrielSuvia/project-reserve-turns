@@ -11,6 +11,8 @@
 .boton{
    background-color: white;
    border-color:rgb(44, 41, 36) ;
+   border-radius: 2px;
+   line-height:15px;
    text-align: center;
     
 }

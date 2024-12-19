@@ -11,19 +11,6 @@ import MisTurno from './views/misTurnos.jsx';
 import  CreateTurnForm  from './components/CreateTurnForm.jsx';
 //import { Counters } from './counterRedux/Counter.jsx';
 
-/*
-<div>
-  {Location.pathname === "/"? <Navbar/> : null }
-  <Routes>
-    <Route path="/" element={<Home/>}/>
-    <Route path="/Register" element={<Register/>}/>
-    <Route path="/Login" element={<Login/>}/>
-    <Route path="/MisTurnos" element={<MisTurno/>}/>
-</Routes>
-</div>
-
-*/
-
 
 function App() {
  // const [count, setCount] = useState(0)

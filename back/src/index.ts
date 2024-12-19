@@ -1,13 +1,12 @@
-import {PORT} from "./config/envs";
 import app from "./server";
 import "reflect-metadata";
 import {AppDataSource} from "./config/data-source";
-const Puerto: number = Number(PORT) || 3004;
+const PORT = process.env.PORT || 3000;
 
 AppDataSource.initialize()
 .then((res) =>{
     console.log("connecting to DataBase");
-    app.listen(Puerto, ()=>{//coreegir PORT
-        console.log( `server listening on port ${Puerto}`)
+    app.listen(PORT, ()=>{//coreegir PORT
+        console.log( `server listening on port ${PORT}`)
     });
 });

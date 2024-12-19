@@ -12,7 +12,5 @@ route.post("/register",userCreateController)
 
 route.post("/login",userLoginController)
 
-//route.delete("/",userDeleteController)
-
 
 export default route;

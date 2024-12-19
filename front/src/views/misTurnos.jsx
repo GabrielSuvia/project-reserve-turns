@@ -23,14 +23,14 @@ if(!userSelect){
  const handleAddTurn = ()=>{
       navigate('/createTurn')
  }
-  //catch user with hir id and his turns array
+  //catch user with the id and his turns array
 
    useEffect(()=>{
     
-        axios.get(`http://localhost:3004/user/${userSelect.id}`)
+        axios.get(`https://my-four-app-production.up.railway.app/user/${userSelect.id}`)
         .then((response) => {  response.data.turnId?.forEach((item)=>dispatch(reservationAdd(item)) )
             console.log("userId, turnId",response.data.turnId)
-        })//un arreglo
+        })
         .catch((error)=> console.log(error))
 
         //al desmontarse el user

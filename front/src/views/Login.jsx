@@ -26,17 +26,14 @@ const handleOnchange = (event)=>{
 const {name, value} = event.target;//recoje todos los valores del formulario junto con su nombre
 
 setLogin({
-    ...login, [name]:value                           //estado anterior
+    ...login, [name]:value             
 })
-
     setErrors(ValidateLogin(login))//objeto de errors puede quedar vacio
-    //y no enviar ningun advertencia debajo del campo de la input
-
 };
 
 const handleSubmitForm = (e)=>{
     e.preventDefault();
-     axios.post("http://localhost:3004/user/login", login, 
+     axios.post("https://my-four-app-production.up.railway.app/user/login", login, 
         {headers: {
         'Content-Type': 'application/json'
       }})
@@ -55,18 +52,18 @@ const handleSubmitForm = (e)=>{
     return (<div>
    
     <form onSubmit={handleSubmitForm} className={styles.formContein}>
-         <h1 >Login</h1>
+         <h1 style={{color:"#5260DB",position:"relative",top:"-60px"}}>Login</h1>
 
          <div className={styles.entrada1} >
-            <label style={{position:'absolute', left:'30px',top:'68px'}}>user</label>
+            <label style={{position:'absolute', left:'30px',top:'68px', color:'#5260DB'}}>Username</label>
             <input type="text" name="userName" value={login.userName} onChange={handleOnchange} className={styles.input1}/>
-            {errors.userName && <p style={{position:'absolute', left:'380px', top:'75px'}}>{errors.userName}</p>}
+            {errors.userName && <p style={{position:'absolute', left:'380px', top:'75px', color:'red'}}>{errors.userName}</p>}
         </div>
 
         <div className={styles.entrada2}>
-            <label style={{position:'absolute', left:'30px',top:'140px'}}>password</label>
+            <label style={{position:'absolute', left:'30px',top:'140px', color:'#5260DB'}}>Password</label>
             <input type="password" name="password" value={login.password} onChange={handleOnchange} className={styles.input2} />
-            {errors.password &&<p style={{position:'absolute', left:'380px',top:'140px'}}>{errors.password}</p>}
+            {errors.password &&<p style={{position:'absolute', left:'380px',top:'140px', color:'red'}}>{errors.password}</p>}
       </div>
 
           <button type="submit" className={styles.boton}>Enter</button>

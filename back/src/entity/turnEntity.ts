@@ -12,11 +12,11 @@ export class Turn{
 
     @Column()
     date:string
-
+    
     @Column()
     time:string
 
-    @ManyToOne(()=>Usser,(user)=>user.turnId)
+    @ManyToOne(()=>Usser,(user)=>user.turnId, { onDelete: 'CASCADE' })
     userId:Usser
 
     @Column({

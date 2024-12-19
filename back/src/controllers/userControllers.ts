@@ -16,7 +16,9 @@ export const userGetController = async (req:Request,res:Response)=>{
 
 export const usersGetController = async (req:Request,res:Response)=>{
     try {
+        console.log("USERSController1")
         const users : Iuser[] = await usersGetService();
+        console.log("USERSController2")
         res.status(200).json(users);
     } catch (error) {
         res.status(500).json("Error of server");

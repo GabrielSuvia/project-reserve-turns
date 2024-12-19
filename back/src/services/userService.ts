@@ -1,19 +1,23 @@
 //model of data base
 //import { Iuser } from "../interfaces/user";
 import {Ilogin} from "../interfaces/login";
-import {dataBaseCredential, dataBaseUser}  from "../config/data-source";
+import {AppDataSource, dataBaseCredential, dataBaseUser}  from "../config/data-source";
 import {Usser} from "../entity/userEntity";
 import { credentialCreateService,validateCredentialService } from "./credentialService";
 import { IcredentialDtb } from "../dtb/credentialDtb";
 
+/*
 
+*/
 export const usersGetService = async (): Promise<Usser[]>=>{
+
   const users = await dataBaseUser.find({
     relations:{
       credentialsld:true,
       turnId:true
     }
   });
+
   return users;
 };
 

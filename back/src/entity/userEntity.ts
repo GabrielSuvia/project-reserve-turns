@@ -26,6 +26,6 @@ export class Usser {
     @JoinColumn()
     credentialsld:Credential
  
-    @OneToMany(()=>Turn,(turn)=> turn.userId)
+    @OneToMany(()=>Turn,(turn)=> turn.userId, { onDelete: 'CASCADE' })
     turnId:Turn[]
 }

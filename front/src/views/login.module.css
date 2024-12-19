@@ -1,15 +1,18 @@
 .formContein{
     background-color: white;
     border-radius: 3%;
-    position: absolute;
+    position: relative;
+    top: 20px;
     left: 400px;
     width: 550px;
     height: 280px;
     bottom: 100px;
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 25px;
     flex-direction: column;
+    text-align: center;
     
     }
     
@@ -28,7 +31,7 @@
    position: absolute;
    height: 30px;
    top: 65px;
-    left: 105px;
+    left: 125px;
 }
 
 .input2{
@@ -36,21 +39,20 @@
    position:absolute;
    height: 30px;
    bottom: 120px;
-   left: 105px;
+   left: 125px;
 }
-
 
 .boton{
     padding: 12px 24px;
     font-size: 16px; 
     font-family: Arial, sans-serif; 
     color: #fff; 
-    background-color: #007bff; 
+    background-color: #5260DB; 
     border: 2px solid transparent; 
     border-radius: 8px;
     cursor: pointer; 
     position: relative;
-    top:50px;
+    top:40px;
 }
 body{
     background-color: #007bff;

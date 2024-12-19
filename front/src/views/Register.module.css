@@ -5,26 +5,26 @@
   flex-direction: row;
   gap: 16px;
   max-width: 800px; 
-  margin: 90px; 
-  padding: 20px;
+  margin: 0px; 
+  padding: 0px;
   border: 1px solid #ddd; 
   border-radius: 8px; 
   box-sizing: border-box; 
   background-color: #f9f9f9;
   position: absolute;
   top: 130px;
-  left: 200px;
+  left: 300px;
    line-height: 4;
 
 }
 
 
 .formGroup{
-    /* Hace que los elementos crezcan y se encojan según el espacio disponible, con un ancho base de 200px */
+   
     display: flex;
     justify-content:space-around;
     flex-direction: row;
-    width: 750px;
+    width: 800px;
     margin: 50;
     line-height: 3;
 }
@@ -34,10 +34,11 @@
     font-size: 16px; 
     font-family: Arial, sans-serif; 
     color: #fff; 
-    background-color: #007bff; 
+    background-color: #5260DB; 
     border: 2px solid transparent; 
     border-radius: 8px;
     cursor: pointer; 
     position: relative;
-    left: 300px;
+    left: 340px;
+    text-align: center;
 }

@@ -21,15 +21,11 @@ export const turnGetService = async (id:number) :Promise<Turn | null> =>{
  export const turnCreateService = async (date:string, time:string, userId:number, status:string): Promise<Turn>=>{
   
     const findUser = await dataBaseUser.findOneBy({id: userId});
-    console.log("findUser de la db en turnCreateService",findUser)
     if(findUser){
      const turnRegister: Iturn= {date:date, time:time, userId:findUser, status:status};
-     console.log("turnregister de turnCreateService", turnRegister)
     const newTurn = await dataBaseTurn.create(turnRegister);
-   
     const turnId = await dataBaseTurn.save(newTurn);
-    console.log("newTurn de turnCreateService", turnId)//
-    return newTurn;
+    return turnId;
   } else {
     throw new Error("User not found");
   }
